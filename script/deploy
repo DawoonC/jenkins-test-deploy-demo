@@ -1,0 +1,9 @@
+#!/bin/sh
+ 
+ssh app@APP.SERVER.IP.ADDRESS <<EOF
+  cd ~/jenkins-test-deploy-demo
+  git pull
+  npm install --production
+  forever restartall
+  exit
+EOF
